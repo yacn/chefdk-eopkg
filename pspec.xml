@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "https://solus-project.com/standard/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>chefdk</Name>
+        <Packager>
+            <Name>Automated Packaging</Name>
+            <Email>noreply@solus-project.com</Email>
+        </Packager>
+        <Summary>Chef development kit</Summary>
+        <Description>
+The Chef development kit contains all the tools you need to
+develop and test your infrastructure, built by the awesome Chef community.
+        </Description>
+        <License>Apache 2.0 - https://downloads.chef.io/chefdk/stable/3.1.0/debian/9/license</License>
+        <Archive sha1sum="07ecbe049a8837acba77f719d40f356d7a471ef1" type="binary">https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb</Archive>
+        <BuildDependencies>
+            <Dependency>bzip2</Dependency>
+            <Dependency>zlib</Dependency>
+        </BuildDependencies>
+    </Source>
+
+    <Package>
+        <Name>chefdk</Name>
+        <Files>
+            <Path fileType="*">/</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>08-14-2018</Date>
+            <Version>3.1.0</Version>
+            <Comment>Create chefdk eopkg</Comment>
+            <Name>Isaac Boehman</Name>
+            <Email>isaac@boehman.me</Email>
+        </Update>
+    </History>
+</PISI>
