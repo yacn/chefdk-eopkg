@@ -7,6 +7,11 @@ in the Debian package would. This is on purpose so the `chefdk` ruby
 installation can be easily used with [`rbenv`](https://github.com/rbenv/rbenv)
 and the [`rbenv-chefdk`](https://github.com/docwhat/rbenv-chefdk) plugin.
 
+If you do not want to use / set up rbenv and you only plan on using the version
+of Ruby bundled with Chef DK, you can set Chef DK to be the default Ruby
+environment for the system by following
+[these instructions](https://github.com/chef/chef-dk#using-chefdk-as-your-primary-development-environment).
+
 ## Building
 
 ### Using `package.yml`/solbuild
