@@ -2,21 +2,21 @@
 
 eopkg configuration file for installing ChefDK (Chef Development Kit)
 
-By default __does not__ configure `$PATH` settings like the `postinst` script
+This __does not__ configure `$PATH` settings like the `postinst` script
 in the Debian package would. This is on purpose so the `chefdk` ruby
 installation can be easily used with [`rbenv`](https://github.com/rbenv/rbenv)
 and the [`rbenv-chefdk`](https://github.com/docwhat/rbenv-chefdk) plugin.
 
 ## Building
 
-### Using `Package.yml`/solbuild
+### Using `package.yml`/solbuild
 
 #### Build
 
 ```
-cd package_yml
+# create a dir for chefdk in your packaging dir
 mkdir -p ~/pkging/chefdk
-cp Package.yml ~/pkging/chefdk
+cp package.yml ~/pkging/chefdk
 cd ~/pkging/chefdk
 echo 'include ../Makefile.common' > Makefile
 make
@@ -24,19 +24,15 @@ make
 
 ### Using pspec.xml + actions.py like 3rd-party repo
 
+Don't have solbuild setup and just want to get this packaged and installed? Use
+the files in `xml_and_actions`:
+
 #### Build/install
 
 ```
 cd xml_and_actions
-./install.sh
-```
-
-Use `build.sh` if you just want to try building the eopkg yourself
-
-#### With postinst script, messes with $PATH
-
-At your own risk, I haven't tested this at all
-
-```
-./install.sh postinst
+# build eopkg
+sudo eopkg bi --ignore-safety pspec.xml
+# install
+sudo eopkg it chefdk*.eopkg
 ```

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Create For Solus Operating System
+# Created For Solus Operating System
 
 from pisi.actionsapi import get, pisitools, shelltools
 
