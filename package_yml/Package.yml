@@ -1,0 +1,25 @@
+name : chefdk
+version : 3.1.0
+release : 1
+source :
+  - https://packages.chef.io/files/stable/chefdk/3.1.0/debian/9/chefdk_3.1.0-1_amd64.deb : 6c897581b151204b5ee28a905384a12e79fbe66445922cac5645d45fc3c23cd5
+license : Apache-2.0
+component : system.software # TODO: better/correct category
+summary : Chef development kit
+description: |
+  The Chef development kit contains all the tools you need to develop and test
+  your infrastructure, built by the awesome Chef community.
+rundeps : 
+  - bash
+setup : |
+  cd $sources
+  ar xf chefdk_*_amd64.deb
+  tar xf data.tar.gz
+  ls -alh opt/chefdk
+  #tar xvf control.tar.gz
+install : |
+  cd $sources
+  ls -alh opt/chefdk
+  install -dm755 $installdir/opt
+  cp -aR opt/chefdk $installdir/opt
+  #sh $sources/postinst
